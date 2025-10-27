@@ -1,0 +1,19 @@
+@HumTech.Api_HostAddress = http://localhost:5255
+
+GET {{HumTech.Api_HostAddress}}/api/services
+Accept: application/json
+
+###
+
+GET {{HumTech.Api_HostAddress}}/api/jobs
+Accept: application/json
+
+###
+
+GET {{HumTech.Api_HostAddress}}/api/courses
+Accept: application/json
+
+###
+
+GET {{HumTech.Api_HostAddress}}/api/blog
+Accept: application/json
