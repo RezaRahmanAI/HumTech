@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
       <a
         *ngSwitchCase="'link'"
         [routerLink]="href"
-        class="inline-flex items-center justify-center rounded-full px-6 py-3 font-medium transition-all focus:outline-none focus:ring focus:ring-primary-200"
+        class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-transform duration-200 focus:outline-none focus:ring focus:ring-primary-200"
         [ngClass]="buttonClasses"
       >
         <ng-content></ng-content>
@@ -19,7 +19,7 @@ import { CommonModule } from '@angular/common';
       <button
         *ngSwitchDefault
         type="button"
-        class="inline-flex items-center justify-center rounded-full px-6 py-3 font-medium transition-all focus:outline-none focus:ring focus:ring-primary-200"
+        class="inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-wide transition-transform duration-200 focus:outline-none focus:ring focus:ring-primary-200"
         [ngClass]="buttonClasses"
       >
         <ng-content></ng-content>
@@ -36,11 +36,11 @@ export class CtaButtonComponent {
   get buttonClasses(): string {
     switch (this.variant) {
       case 'secondary':
-        return 'bg-secondary-900 text-accent hover:bg-secondary-800';
+        return 'bg-secondary-900 text-accent hover:bg-secondary-800 hover:-translate-y-0.5';
       case 'ghost':
-        return 'border border-primary text-primary hover:bg-primary-50';
+        return 'border border-primary-200 text-primary-600 hover:bg-primary-50 hover:text-primary-700 hover:-translate-y-0.5';
       default:
-        return 'bg-primary text-accent hover:bg-primary-600';
+        return 'bg-gradient-to-r from-primary-500 via-primary-400 to-primary-600 text-white shadow-lg shadow-primary-500/30 hover:shadow-primary-500/40 hover:-translate-y-0.5';
     }
   }
 }

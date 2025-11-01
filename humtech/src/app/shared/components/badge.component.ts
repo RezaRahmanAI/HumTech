@@ -25,9 +25,9 @@ export class BadgeComponent {
       case 'warning':
         return 'bg-amber-100 text-amber-700';
       case 'neutral':
-        return 'bg-secondary-100 text-secondary-600';
+        return 'bg-secondary-900/30 text-accent-100';
       default:
-        return 'bg-primary-50 text-primary';
+        return 'bg-primary-100 text-primary-700';
     }
   }
 }
