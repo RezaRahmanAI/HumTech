@@ -8,7 +8,11 @@ import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
   standalone: true,
   imports: [CommonModule, ScrollRevealDirective],
   template: `
-    <figure appScrollReveal class="flex h-full flex-col gap-4 rounded-3xl border border-secondary-100 bg-accent p-6">
+    <figure
+      appScrollReveal
+      class="group relative flex h-full flex-col gap-5 overflow-hidden rounded-3xl border border-secondary-100/60 bg-accent p-8 shadow-lg shadow-secondary-900/10"
+    >
+      <span class="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary-500 via-primary-400 to-primary-600"></span>
       <div class="flex items-center gap-4">
         <img
           [src]="testimonial.photo"
@@ -21,10 +25,10 @@ import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
           <p class="text-xs uppercase tracking-wide text-secondary-500">{{ testimonial.company }}</p>
         </div>
       </div>
-      <blockquote class="flex-1 text-sm text-secondary-700">“{{ testimonial.review }}”</blockquote>
-      <div class="flex items-center gap-1 text-primary">
+      <blockquote class="flex-1 text-sm leading-relaxed text-secondary-600">“{{ testimonial.review }}”</blockquote>
+      <div class="flex items-center gap-2 text-primary-600">
         <span class="text-sm font-semibold">{{ testimonial.rating | number: '1.1-1' }}</span>
-        <span aria-hidden="true">★</span>
+        <span aria-hidden="true" class="text-base">★</span>
       </div>
     </figure>
   `,

@@ -12,10 +12,11 @@ import { ScrollRevealDirective } from '../directives/scroll-reveal.directive';
       <div
         *ngFor="let stat of stats"
         appScrollReveal
-        class="rounded-3xl border border-secondary-100 bg-accent p-6 text-center shadow-sm"
+        class="relative overflow-hidden rounded-3xl bg-secondary-900 p-8 text-center text-accent shadow-lg shadow-secondary-900/30"
       >
-        <p class="text-sm uppercase tracking-wide text-secondary-500">{{ stat.label }}</p>
-        <p class="mt-2 font-heading text-3xl font-semibold text-secondary-900">
+        <span class="pointer-events-none absolute -top-10 right-0 h-32 w-32 rounded-full bg-primary-400/40 blur-3xl"></span>
+        <p class="text-xs font-semibold uppercase tracking-[0.3em] text-accent/60">{{ stat.label }}</p>
+        <p class="mt-4 font-heading text-4xl font-semibold">
           {{ animatedValue(stat.id) | number: '1.0-0' }}{{ stat.suffix }}
         </p>
       </div>
